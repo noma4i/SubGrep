@@ -3,8 +3,10 @@ import sublime, sublime_plugin
 class SubGrepCommand(sublime_plugin.TextCommand):
   def run(self, edit):
     title = "Grep: [TEST]"
-    selection = "TEST"
-    self.view.run_command( 'show_grep', {'title': title, 'selection': selection} )
+    for region in self.view.sel():
+      if not region.empty():
+        selection = self.view.substr(region)
+        self.view.run_command( 'show_grep', {'title': title, 'selection': selection} )
 
 class ShowGrepCommand(sublime_plugin.TextCommand):
   def run(self,edit,title,selection):
