@@ -1,0 +1,6 @@
+[
+  {
+    "keys": ["shift+command+g"],
+    "command": "sub_grep"
+  }
+]
