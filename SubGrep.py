@@ -25,6 +25,6 @@ class ShowGrepCommand(sublime_plugin.TextCommand):
         result += "%s\n" % line.lstrip(' ')
 
     panel.insert(edit, 0, result)
-    panel.set_read_only(True)
+    panel.set_read_only(False)
 
     return panel
